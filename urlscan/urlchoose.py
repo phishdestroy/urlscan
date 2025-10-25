@@ -36,6 +36,8 @@ import urwid
 if platform == 'darwin':
     COPY_COMMANDS = ('pbcopy',)
     COPY_COMMANDS_PRIMARY = ('pbcopy',)
+    import selectors
+    selectors.DefaultSelector = selectors.SelectSelector
 elif 'WAYLAND_DISPLAY' in os.environ:
     COPY_COMMANDS = ('wl-copy',)
     COPY_COMMANDS_PRIMARY = ('wl-copy --primary',)
