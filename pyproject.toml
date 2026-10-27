@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling", "hatch-vcs"]
+requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
@@ -7,6 +7,7 @@ name = "urlscan"
 dynamic = ["version"]
 description = "View/select the URLs in an email message or file"
 readme = "README.md"
+requires-python = ">=3.11"
 license = "GPL-2.0-or-later"
 authors = [
     { name = "Scott Hansen", email = "tech@firecat53.net" },
@@ -25,13 +26,11 @@ classifiers = [
     "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
     "Topic :: Utilities",
 ]
 dependencies = [
@@ -45,14 +44,7 @@ urlscan = "urlscan.__main__:main"
 Homepage = "https://github.com/firecat53/urlscan"
 
 [tool.hatch.version]
-source = "vcs"
-fallback-version = "0.0.0"
-
-[tool.hatch.version.raw-options]
-local_scheme = "no-local-version"
-
-[tool.hatch.build.hooks.vcs]
-version-file = "urlscan/_version.py"
+path = "urlscan/__init__.py"
 
 [tool.hatch.build.targets.wheel.shared-data]
 LICENSE = "share/doc/urlscan/LICENSE"
@@ -64,3 +56,6 @@ include = [
     "/urlscan",
     "urlscan.1",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -28,7 +28,7 @@ import sys
 from email import policy
 from email.parser import BytesParser
 from urlscan import urlchoose, urlscan
-from urlscan._version import version
+from urlscan import __version__
 
 
 def parse_arguments():
@@ -175,7 +175,7 @@ def main():
     """
     args = parse_arguments()
     if args.version is True:
-        print(version)
+        print(__version__)
         return
     if args.genconf is True:
         urlchoose.URLChooser([], genconf=True)

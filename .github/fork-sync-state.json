@@ -1,0 +1,8 @@
+{
+  "checked_at": "2026-10-27T11:30:46.081210+00:00",
+  "upstream": "firecat53/urlscan",
+  "upstream_branch": "main",
+  "upstream_commit": "ec4d47b76e7eda3b1d127b88df5fcadb32ac1f38",
+  "version": 1,
+  "workflow_policy": "preserve fork workflows; never import upstream workflows"
+}
